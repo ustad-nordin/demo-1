@@ -1,3 +1,11 @@
+// Opdracht: Random Generator Quotes
+// - Maak een lijst van quotes, gebruik dus een array
+// - Maak een random getallen generator
+// - Maak een referentie naar een html element, om de quote te tonen
+// - Voeg een button om na een click een willekeurig quote te tonen
+
+
+
 
 // Maak een array van quotes
 const quotes = [
@@ -23,7 +31,7 @@ const MAX = quotes.length-1;
 // 
 const button = document.querySelector(".btn-quote");
 button.addEventListener("click", onRandomQuotes);
-let output = document.getElementsByClassName("title")[0];
+let output = document.querySelector(".title");
 
 // genereert een willekeurig getal
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -36,7 +44,8 @@ function getRandomIntInclusive() {
 function onRandomQuotes() {
    const random = getRandomIntInclusive();
    
-   output.innerHTML = quotes[random];
+   // output.innerHTML = quotes[random]; // <-- kan ook!
+   output.textContent = quotes[random];
 }
 
 // niets bijzonders
