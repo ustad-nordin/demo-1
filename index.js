@@ -25,6 +25,7 @@ const button = document.querySelector(".btn-quote");
 button.addEventListener("click", onRandomQuotes);
 let output = document.getElementsByClassName("title")[0];
 
+// genereert een willekeurig getal
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomIntInclusive() {
     const min = Math.ceil(MIN);
@@ -32,19 +33,13 @@ function getRandomIntInclusive() {
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-// function onClick() {
-//     if(position == merken.length)
-//         position = 0;
-//     output.innerHTML = merken[position];
-//     position++;
-// }
-
 function onRandomQuotes() {
    const random = getRandomIntInclusive();
    
    output.innerHTML = quotes[random];
 }
 
+// niets bijzonders
 function onFetch() {
     position++;
     
